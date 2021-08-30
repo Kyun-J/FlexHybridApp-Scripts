@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "allowSyntheticDefaultImports": true,
+        "strictNullChecks": true,
+        "baseUrl": "./"
+    },
+    "include": ["lib", "dist"]
+}

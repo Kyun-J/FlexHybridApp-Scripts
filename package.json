@@ -1,0 +1,43 @@
+{
+    "name": "flex-hybrid-app-scripts",
+    "version": "0.0.1",
+    "description": "FlexHybridApp script module",
+    "keywords": [
+        "WebView",
+        "Interface"
+    ],
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "cross-env NODE_ENV=production webpack",
+        "test": "tsc -p ./example && http-server -a localhost -o example/test.html"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Kyun-J/FlexHybridApp-Scripts.git"
+    },
+    "author": "Kyun-J <dvkyun@gmail.com>",
+    "license": "BSD 3-Clause",
+    "bugs": {
+        "url": "https://github.com/Kyun-J/FlexHybridApp-Scripts/issues"
+    },
+    "homepage": "https://github.com/Kyun-J/FlexHybridApp-Scripts#readme",
+    "devDependencies": {
+        "@babel/core": "^7.15.8",
+        "@babel/preset-env": "^7.15.8",
+        "@babel/runtime-corejs3": "^7.15.4",
+        "@typescript-eslint/eslint-plugin": "^4.33.0",
+        "@typescript-eslint/parser": "^4.33.0",
+        "babel-loader": "^8.2.2",
+        "core-js": "^3.18.3",
+        "cross-env": "^7.0.3",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-prettier": "^3.4.1",
+        "http-server": "^13.0.2",
+        "typescript": "^4.4.4",
+        "webpack": "^5.58.2",
+        "webpack-cli": "^4.9.0"
+    },
+    "dependencies": {}
+}

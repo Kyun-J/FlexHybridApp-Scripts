@@ -38,3 +38,7 @@ export function flexScriptNative<F extends FlexInterfaces>(
 ): $Flex & F
 
 export function flexScriptWeb<F extends FlexInterfaces>(nativeToWeb: F): F
+
+export const $flex: $Flex
+
+export default $flex

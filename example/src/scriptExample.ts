@@ -1,9 +1,11 @@
-import {
+import $flex, {
     flexScriptNative,
     flexScriptWeb,
     flexScriptInfo,
     FlexType,
 } from '../../dist/index.js'
+
+console.log($flex.isScript)
 
 flexScriptInfo({
     version: '0.0.1',

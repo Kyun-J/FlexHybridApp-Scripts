@@ -3,7 +3,7 @@ import $flex, {
     flexScriptWeb,
     flexScriptInfo,
     FlexType,
-} from '../../dist/index.js'
+} from '../../dist/index'
 
 console.log($flex.isScript)
 

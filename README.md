@@ -1,6 +1,10 @@
+[한국어 README](https://github.com/Kyun-J/FlexHybridApp-Scripts/blob/main/README-ko.md)
+
 # FlexHybridApp-Scripts
 
-This library is available for [Android](https://github.com/Kyun-J/FlexHybridApp-Android), [iOS](https://github.com/Kyun-J/FlexHybridApp-iOS), **This library cannot be used alone.**
+**This library is not mandatory.**
+This library is available for [Android](https://github.com/Kyun-J/FlexHybridApp-Android), [iOS](https://github.com/Kyun-J/FlexHybridApp-iOS),  
+**This library cannot be used alone.**
 
 \$flex object is basically created in native(AOS, iOS) and inserted into webview.  
 If you call \$flex on the webpage before it is inserted, you will get an error.
@@ -17,7 +21,7 @@ Preload the \$flex object into the window.
 ```html
 <script
     type="application/javascript"
-    src="https://cdn.jsdelivr.net/npm/flex-hybrid-app-scripts@0.0.2/dist/script.min.js"
+    src="https://cdn.jsdelivr.net/npm/flex-hybrid-app-scripts@0.0.3-fix/dist/script.min.js"
 ></script>
 ```
 

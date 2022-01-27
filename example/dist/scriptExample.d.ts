@@ -1,5 +1,5 @@
-import { FlexType } from '../../dist/index.js';
-declare const webToNative: import("../../dist/index.js").$Flex & {
+import { FlexType } from '../../dist/index';
+declare const webToNative: import("../../dist/index").$Flex & {
     interface1: (data1: FlexType) => string;
 };
 declare const nativeToWeb: {

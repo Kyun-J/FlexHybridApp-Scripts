@@ -1,6 +1,8 @@
 # FlexHybridApp-Scripts
 
-이 라이브러리는 [Android](https://github.com/Kyun-J/FlexHybridApp-Android), [iOS](https://github.com/Kyun-J/FlexHybridApp-iOS)를 보조하는 라이브러리며, **이 라이브러리를 단독으로 사용할 수 없습니다.**
+**이 라이브러리는 필수가 아닙니다.**  
+이 라이브러리는 [Android](https://github.com/Kyun-J/FlexHybridApp-Android), [iOS](https://github.com/Kyun-J/FlexHybridApp-iOS)를 보조하는 라이브러리며,  
+**이 라이브러리를 단독으로 사용할 수 없습니다.**
 
 \$flex객체는, 기본적으로 native(AOS, iOS)에서 생성되어 webview에 삽입됩니다.  
 삽입되기 전에 webpage에서 \$flex를 호출하면, 오류가 발생하게 됩니다.
@@ -17,7 +19,7 @@
 ```html
 <script
     type="application/javascript"
-    src="https://cdn.jsdelivr.net/npm/flex-hybrid-app-scripts@0.0.2/dist/script.min.js"
+    src="https://cdn.jsdelivr.net/npm/flex-hybrid-app-scripts@0.0.3-fix/dist/script.min.js"
 ></script>
 ```
 

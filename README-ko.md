@@ -19,7 +19,7 @@
 ```html
 <script
     type="application/javascript"
-    src="https://cdn.jsdelivr.net/npm/flex-hybrid-app-scripts@0.1.0/dist/script.min.js"
+    src="https://cdn.jsdelivr.net/npm/flex-hybrid-app-scripts@0.1.1/dist/script.min.js"
 ></script>
 ```
 
@@ -72,7 +72,7 @@ export declare type FlexScriptType = windowFlexType & flexWebType
 
 ```ts
 // set global tyle
-import FlexScriptType from '../src/scriptExample'
+import { FlexScriptType } from '../src/scriptExample'
 
 declare global {
     interface Window {

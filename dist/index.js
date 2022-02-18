@@ -1,1 +1,62 @@
-!function(e,i){"object"==typeof exports&&"object"==typeof module?module.exports=i():"function"==typeof define&&define.amd?define([],i):"object"==typeof exports?exports["flex-script"]=i():e["flex-script"]=i()}(self,(function(){return(()=>{var e={738:()=>{!function(){"use strict";window&&"object"!=typeof window.$flex&&(Object.defineProperty(window,"__flexScript",{value:{web:{},listeners:[]},enumerable:!1}),Object.defineProperty(window,"$flex",{value:{},writable:!0,enumerable:!0}),Object.defineProperties(window.$flex,{version:{value:"1.0",writable:!0,enumerable:!0},isMobile:{value:/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),writable:!0,enumerable:!0},isAndroid:{value:/Android/i.test(navigator.userAgent),writable:!0,enumerable:!0},isiOS:{value:/iPhone|iPad|iPod/i.test(navigator.userAgent),writable:!0,enumerable:!0},isScript:{value:!0,writable:!1,enumerable:!1},device:{value:{},writable:!0,enumerable:!0},addEventListener:{value:function(e,i){window.__flexScript.listeners.push({e,c:i})},writable:!1,enumerable:!0},web:{value:{},writable:!1,enumerable:!0}}),window.__flexScript.web=new Proxy(window.$flex.web,{}))}()}},i={};function o(t){var r=i[t];if(void 0!==r)return r.exports;var n=i[t]={exports:{}};return e[t](n,n.exports,o),n.exports}o.n=e=>{var i=e&&e.__esModule?()=>e.default:()=>e;return o.d(i,{a:i}),i},o.d=(e,i)=>{for(var t in i)o.o(i,t)&&!o.o(e,t)&&Object.defineProperty(e,t,{enumerable:!0,get:i[t]})},o.o=(e,i)=>Object.prototype.hasOwnProperty.call(e,i),o.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})};var t={};return(()=>{"use strict";function e(e){if(!window||!window.$flex.isScript)throw Error("$flex is not in Script mode.");return"object"==typeof e&&("string"==typeof e.version&&(window.$flex.version=e.version),"boolean"==typeof e.isMobile&&(window.$flex.isMobile=e.isMobile),"boolean"==typeof e.isAndroid&&(window.$flex.isAndroid=e.isAndroid),"boolean"==typeof e.isiOS&&(window.$flex.isiOS=e.isiOS),"object"==typeof e.device&&(window.$flex.device=e.device)),window.$flex}function i(e){if(!window||!window.$flex.isScript)throw Error("$flex is not in Script mode.");return"object"==typeof e&&(Object.keys(e).forEach((i=>{"version"!==i&&"isMobile"!==i&&"isAndroid"!==i&&"isiOS"!==i&&"isScript"!==i&&"device"!==i&&"addEventListener"!==i&&"web"!==i||delete e[i]})),Object.assign(window.$flex,e)),window.$flex}function r(e){if(!window||!window.$flex.isScript)throw Error("$flex is not in Script mode.");return"object"==typeof e&&Object.assign(window.$flex.web,e),window.$flex.web}function n(o,t,n){if(!window||!window.$flex.isScript)throw Error("$flex is not in Script mode.");return e(o),i(t),r(n),window.$flex}o.r(t),o.d(t,{setflexInfo:()=>e,setflexNativeInterface:()=>i,setflexWebInterface:()=>r,setflexScript:()=>n,$flex:()=>l,default:()=>d}),o(738);const l=window.$flex,d=l})(),t})()}));
+import './script.min.js'
+
+export function setFlexInfo(info) {
+  if (!window || !window.$flex.isScript)
+    throw Error('$flex is not in Script mode.')
+  if (typeof info === 'object') {
+    if (typeof info.version === 'string')
+      window.$flex.version = info.version
+    if (typeof info.isMobile === 'boolean')
+      window.$flex.isMobile = info.isMobile
+    if (typeof info.isAndroid === 'boolean')
+      window.$flex.isAndroid = info.isAndroid
+    if (typeof info.isiOS === 'boolean') window.$flex.isiOS = info.isiOS
+    if (typeof info.device === 'object') window.$flex.device = info.device
+  }
+  return window.$flex
+}
+
+export function setFlexNativeInterface(webToNevice) {
+  if (!window || !window.$flex.isScript)
+    throw Error('$flex is not in Script mode.')
+  if (typeof webToNevice === 'object') {
+    Object.keys(webToNevice).forEach((key) => {
+      if (
+        key === 'version' ||
+        key === 'isMobile' ||
+        key === 'isAndroid' ||
+        key === 'isiOS' ||
+        key === 'isScript' ||
+        key === 'device' ||
+        key === 'addEventListener' ||
+        key === 'web'
+      ) {
+        delete webToNevice[key]
+      }
+    })
+    Object.assign(window.$flex, webToNevice)
+  }
+  return window.$flex
+}
+
+export function setFlexWebInterface(nativeToWeb) {
+  if (!window || !window.$flex.isScript)
+    throw Error('$flex is not in Script mode.')
+  if (typeof nativeToWeb === 'object') {
+    Object.assign(window.$flex.web, nativeToWeb)
+  }
+  return window.$flex.web
+}
+
+export function setFlexScript(info, webToNevice, nativeToWeb) {
+  if (!window || !window.$flex.isScript)
+    throw Error('$flex is not in Script mode.')
+  setFlexInfo(info)
+  setFlexNativeInterface(webToNevice)
+  setFlexWebInterface(nativeToWeb)
+  return window.$flex
+}
+
+export const $flex = window.$flex
+
+export default $flex

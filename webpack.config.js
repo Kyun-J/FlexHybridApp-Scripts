@@ -4,7 +4,6 @@ const config = {
     mode: process.env.NODE_ENV,
     context: __dirname + '/lib',
     entry: {
-        'index.js': ['./module.js'],
         'script.min.js': ['./script.js'],
     },
     output: {

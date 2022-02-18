@@ -74,7 +74,7 @@ export declare type FlexScriptType = windowFlexType & flexWebType
 
 ```ts
 // set global tyle
-import FlexScriptType from '../src/scriptExample'
+import { FlexScriptType } from '../src/scriptExample'
 
 declare global {
     interface Window {

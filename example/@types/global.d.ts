@@ -1,7 +1,7 @@
-import flexType from '../src/scriptExample'
+import { FlexScriptType } from '../src/createScriptExample'
 
 declare global {
     interface Window {
-        $flex: flexType
+        $flex: FlexScriptType
     }
 }

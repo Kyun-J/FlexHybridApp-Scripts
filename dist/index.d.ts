@@ -26,18 +26,26 @@ export type FlexType =
     | boolean
     | string
     | Array<FlexType>
-    | FlexInterfaces
+    | { [key: string]: FlexType }
     | undefined
     | null
     | Error
+    | void
 
-export function flexScriptInfo(info: FlexInfo): $Flex
+export function setFlexInfo(info: FlexInfo): $Flex
 
-export function flexScriptNative<F extends FlexInterfaces>(
+export function setFlexNativeInterface<F extends FlexInterfaces>(
     webToNevice: F
 ): $Flex & F
 
-export function flexScriptWeb<F extends FlexInterfaces>(nativeToWeb: F): F
+export function setFlexWebInterface<F extends FlexInterfaces>(
+    nativeToWeb: F
+): $Flex & { web: F }
+
+export function setFlexScript<
+    F extends FlexInterfaces,
+    E extends FlexInterfaces
+>(info: FlexInfo, webToNevice: F, nativeToWeb: E): $Flex & F & { web: E }
 
 export const $flex: $Flex
 

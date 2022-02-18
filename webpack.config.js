@@ -4,17 +4,15 @@ const config = {
     mode: process.env.NODE_ENV,
     context: __dirname + '/lib',
     entry: {
-        'index.js': ['./script.js', './module.js'],
+        'index.js': ['./module.js'],
         'script.min.js': ['./script.js'],
-    },
-    experiments: {
-        outputModule: true,
     },
     output: {
         path: __dirname + '/dist',
         filename: '[name]',
         library: {
-            type: 'module',
+            name: 'flex-script',
+            type: 'umd',
         },
     },
     resolve: {

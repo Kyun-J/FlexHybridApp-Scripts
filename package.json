@@ -1,6 +1,6 @@
 {
     "name": "flex-hybrid-app-scripts",
-    "version": "0.0.3-fix",
+    "version": "0.1.0",
     "description": "FlexHybridApp script module",
     "keywords": [
         "WebView",
@@ -9,8 +9,7 @@
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
-        "build": "cross-env NODE_ENV=production webpack",
-        "test": "cross-env NODE_ENV=production webpack && http-server -a localhost -o example/test.html"
+        "build": "cross-env NODE_ENV=production webpack"
     },
     "repository": {
         "type": "git",

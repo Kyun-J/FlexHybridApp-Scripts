@@ -7,7 +7,7 @@ This library is available for [Android](https://github.com/Kyun-J/FlexHybridApp-
 **This library cannot be used alone.**
 
 \$flex object is basically created in native(AOS, iOS) and inserted into webview.  
-If you call \$flex on the webpage before it is inserted, you will get an error.
+Therefore, if you call \ $ flex on WebPage, such as desktop, an error will occur.
 
 **This library prevents errors by creating \$flex objects in advance,  
 It exists to make it easy to add items to declare.**
@@ -21,7 +21,7 @@ Preload the \$flex object into the window.
 ```html
 <script
     type="application/javascript"
-    src="https://cdn.jsdelivr.net/npm/flex-hybrid-app-scripts@0.0.3-fix/dist/script.min.js"
+    src="https://cdn.jsdelivr.net/npm/flex-hybrid-app-scripts@0.1.0/dist/script.min.js"
 ></script>
 ```
 
@@ -39,28 +39,27 @@ npm i flex-hybrid-app-scripts
 
 ```ts
 // $flex dummy setup
-import $flex, {
-    flexScriptNative,
-    flexScriptWeb,
-    flexScriptInfo,
-    FlexType,
+import {
+    setFlexNativeInterface,
+    setFlexWebInterface,
+    setFlexInfo,
 } from 'flex-hybrid-app-scripts'
 
 // Apply dummy settings of $flex object
-flexScriptInfo({
+setFlexInfo({
     version: '0.0.2',
     isMobile: true,
 })
 
 // Set dummy function for web to native interface
-const webToNative = flexScriptNative({
+const webToNative = setFlexNativeInterface({
     interface1: (data1: FlexType) => {
         return `${data1}, interface1`
     },
 })
 
 // Set dummy function for native to web interface
-const nativeToWeb = flexScriptWeb({
+const nativeToWeb = setFlexWebInterface({
     interface2: () => {
         return 2
     },
@@ -70,18 +69,16 @@ type windowFlexType = typeof webToNative
 type flexWebType = typeof nativeToWeb
 
 // $flex dummy type export
-export default interface customFlexType extends windowFlexType {
-    web: flexWebType
-}
+export declare type FlexScriptType = windowFlexType & flexWebType
 ```
 
 ```ts
 // set global tyle
-import customFlexType from '../src/scriptExample'
+import FlexScriptType from '../src/scriptExample'
 
 declare global {
     interface Window {
-        $flex: customFlexType
+        $flex: FlexScriptType
     }
 }
 ```
